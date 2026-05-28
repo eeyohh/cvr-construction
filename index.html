@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Christo van Rheede Construction | Pretoria's Trusted Builder</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background-color: #f5f5f5; color: #1e1e1e; line-height: 1.5; scroll-behavior: smooth; }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+    
+    :root {
+      --primary-charcoal: #2d2d2d;
+      --primary-green: #7cb342;
+      --primary-green-light: #9ccc65;
+      --secondary-charcoal: #3a3a3a;
+      --text-light: #f5f5f5;
+      --text-dark: #1e1e1e;
+    }
+    
+    header { background: var(--primary-charcoal); color: white; padding: 12px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); }
+    .header-flex { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+    .logo-area { display: flex; align-items: center; gap: 15px; }
+    .logo-icon { width: 55px; height: 55px; background: var(--primary-green); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 800; color: var(--primary-charcoal); }
+    .logo h1 { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; }
+    .logo h1 span { color: var(--primary-green); }
+    .logo p { font-size: 0.7rem; color: #b0b0b0; letter-spacing: 1px; }
+    .nav-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .nav-links a { color: var(--text-light); text-decoration: none; font-weight: 600; transition: 0.2s; font-size: 0.95rem; }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary-green); border-bottom: 2px solid var(--primary-green); padding-bottom: 4px; }
+    
+    .trust-badges { background: var(--secondary-charcoal); padding: 12px 0; border-bottom: 1px solid #4a4a4a; }
+    .trust-badges .container { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
+    .trust-badge { display: flex; align-items: center; gap: 10px; color: var(--primary-green); font-weight: 600; font-size: 0.9rem; }
+    .trust-badge i { font-size: 1.3rem; }
+    .trust-badge span { color: white; }
+    
+    .hero-slider { width: 100%; height: 85vh; min-height: 500px; position: relative; }
+    .swiper { width: 100%; height: 100%; }
+    .swiper-slide { background-size: cover; background-position: center 30%; position: relative; }
+    .swiper-slide::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(45,45,45,0.7), rgba(0,0,0,0.5)); }
+    .hero-content { position: absolute; bottom: 20%; left: 0; right: 0; text-align: center; color: white; z-index: 2; padding: 0 24px; }
+    .hero-content h2 { font-size: 3rem; font-weight: 800; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+    .hero-content p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 28px; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); }
+    .btn { display: inline-block; background-color: var(--primary-green); color: var(--primary-charcoal); padding: 12px 32px; border-radius: 40px; font-weight: 700; text-decoration: none; transition: 0.2s; border: none; cursor: pointer; font-size: 1rem; }
+    .btn-outline { background: transparent; border: 2px solid var(--primary-green); color: var(--primary-green); margin-left: 12px; }
+    .btn-outline:hover { background: var(--primary-green); color: var(--primary-charcoal); }
+    .btn:hover { background: var(--primary-green-light); transform: translateY(-2px); }
+    
+    section { padding: 70px 0; border-bottom: 1px solid #e0e0e0; }
+    .section-title { font-size: 2.2rem; font-weight: 700; margin-bottom: 16px; color: var(--primary-charcoal); position: relative; display: inline-block; }
+    .section-title:after { content: ''; display: block; width: 70px; height: 4px; background: var(--primary-green); margin-top: 10px; border-radius: 4px; }
+    
+    .grid-3, .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; margin-top: 48px; }
+    .service-card { position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.15); transition: all 0.3s; min-height: 300px; display: flex; align-items: flex-end; }
+    .service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(45,45,45,0.95) 0%, rgba(45,45,45,0.5) 60%, rgba(0,0,0,0.2) 100%); z-index: 1; }
+    .service-card:hover { transform: translateY(-8px); }
+    .service-card-content { position: relative; z-index: 2; padding: 30px 24px 28px; color: white; width: 100%; }
+    .service-card-content i { font-size: 2.5rem; color: var(--primary-green); margin-bottom: 16px; display: inline-block; }
+    .service-card-content h3 { font-size: 1.5rem; margin-bottom: 12px; font-weight: 700; }
+    
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; margin-top: 40px; }
+    .gallery-item { border-radius: 16px; overflow: hidden; box-shadow: 0 12px 24px rgba(0,0,0,0.1); transition: all 0.3s; height: 260px; background-size: cover; background-position: center; cursor: pointer; }
+    .gallery-item:hover { transform: scale(1.03); box-shadow: 0 20px 30px rgba(0,0,0,0.15); }
+    
+    .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 48px; }
+    .testimonial-card { background: #ffffff; border-radius: 24px; padding: 28px 24px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05); border-left: 6px solid var(--primary-green); }
+    .testimonial-card p { font-style: italic; margin-bottom: 20px; color: #2d3e45; }
+    .client-name { font-weight: 800; color: var(--primary-charcoal); }
+    .stars { color: var(--primary-green); }
+    
+    .contact-flex { display: flex; flex-wrap: wrap; gap: 48px; margin-top: 40px; }
+    .contact-form, .contact-info { flex: 1; background: #ffffff; padding: 32px; border-radius: 24px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+    .form-group { margin-bottom: 20px; }
+    input, textarea { width: 100%; padding: 14px 18px; border: 1px solid #cfdfe5; border-radius: 16px; font-family: inherit; font-size: 1rem; }
+    input:focus, textarea:focus { outline: none; border-color: var(--primary-green); box-shadow: 0 0 0 3px rgba(124,179,66,0.2); }
+    button[type="submit"] { background: var(--primary-charcoal); color: white; border: none; padding: 14px 28px; font-weight: 700; border-radius: 40px; cursor: pointer; transition: 0.2s; }
+    button[type="submit"]:hover { background: var(--primary-green); color: var(--primary-charcoal); }
+    .info-detail { display: flex; align-items: center; gap: 14px; margin: 20px 0; }
+    .info-detail i { color: var(--primary-green); width: 24px; }
+    
+    .about-grid { display: flex; flex-wrap: wrap; gap: 50px; align-items: center; }
+    .about-text { flex: 1.5; }
+    .about-stats { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .stat-box { background: #f8fafc; padding: 30px 20px; text-align: center; border-radius: 20px; border-bottom: 4px solid var(--primary-green); }
+    .stat-number { font-size: 2.5rem; font-weight: 800; color: var(--primary-green); }
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+    .team-member { text-align: center; background: white; border-radius: 20px; padding: 24px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+    .team-member i { font-size: 3rem; color: var(--primary-green); margin-bottom: 16px; }
+    
+    footer { background: var(--primary-charcoal); color: #cfdfe5; padding: 50px 0 24px; }
+    .footer-grid { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; margin-bottom: 32px; }
+    .footer-col h4 { color: var(--primary-green); margin-bottom: 20px; }
+    .social-icons a { color: white; background: #4a4a4a; width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-right: 12px; transition: 0.2s; font-size: 1.4rem; text-decoration: none; }
+    .social-icons a:hover { background: var(--primary-green); color: var(--primary-charcoal); }
+    .copyright { text-align: center; padding-top: 24px; border-top: 1px solid #4a4a4a; font-size: 0.85rem; }
+    .whatsapp-float { position: fixed; bottom: 28px; right: 28px; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 8px 22px rgba(0,0,0,0.2); z-index: 999; text-decoration: none; }
+    .whatsapp-float:hover { transform: scale(1.08); background-color: #20b859; }
+    
+    @media (max-width: 750px) {
+      .hero-content h2 { font-size: 2rem; }
+      .header-flex { flex-direction: column; text-align: center; }
+      .nav-links { justify-content: center; gap: 16px; }
+      .trust-badges .container { gap: 20px; }
+      .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-flex">
+    <div class="logo-area">
+      <div class="logo-icon">CVR</div>
+      <div class="logo">
+        <h1>Christo van Rheede <span>Construction</span></h1>
+        <p>PTY (LTD) | NHBRC Registered | Built on Integrity</p>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#" class="active" data-page="home">Home</a>
+      <a href="#" data-page="about">About Us</a>
+      <a href="#" data-page="services">Services</a>
+      <a href="#" data-page="gallery">Gallery</a>
+      <a href="#" data-page="contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<div class="trust-badges">
+  <div class="container">
+    <div class="trust-badge"><i class="fas fa-certificate"></i><span>✔ NHBRC Registered</span></div>
+    <div class="trust-badge"><i class="fas fa-users"></i><span>✔ Professional Team</span></div>
+    <div class="trust-badge"><i class="fas fa-medal"></i><span>✔ Quality Assured</span></div>
+  </div>
+</div>
+
+<main id="app-root"></main>
+
+<a href="https://wa.me/27721182778?text=Hello%20Christo%2C%20I%27d%20like%20to%20get%20a%20quote%20for%20my%20project." class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Christo van Rheede Construction</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Copperleaf Estate, Mnandi, Centurion, 0157</p>
+        <p><i class="fas fa-phone-alt"></i> 072 118 2778</p>
+        <p><i class="fas fa-envelope"></i> christovanrheede3@gmail.com</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <p><a href="#" style="color:#cfdfe5; text-decoration:none;" data-footer-page="home">Home</a></p>
+        <p><a href="#" style="color:#cfdfe5; text-decoration:none;" data-footer-page="about">About Us</a></p>
+        <p><a href="#" style="color:#cfdfe5; text-decoration:none;" data-footer-page="services">Services</a></p>
+        <p><a href="#" style="color:#cfdfe5; text-decoration:none;" data-footer-page="gallery">Gallery</a></p>
+        <p><a href="#" style="color:#cfdfe5; text-decoration:none;" data-footer-page="contact">Contact</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/CVRCONSTRUCT" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/cvrconstruction/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">© 2025 Christo van Rheede Construction (PTY) LTD. NHBRC Registered.</div>
+  </div>
+</footer>
+
+<script>
+  const COMPANY_EMAIL = "christovanrheede3@gmail.com";
+  
+  // ============================================================
+  // YOUR GITHUB USERNAME IS SET TO: eeyohh
+  // IMAGES WILL LOAD FROM YOUR /images/ FOLDER
+  // ============================================================
+  
+  const GITHUB_USERNAME = "eeyohh";
+  const REPO_NAME = "cvr-construction";
+  const BASE_IMAGE_URL = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${REPO_NAME}/main/images/`;
+  
+  // Hero Slider Images - hero1.jpg, hero2.jpg, hero3.jpg
+  const heroImages = [
+    BASE_IMAGE_URL + "hero1.jpg",
+    BASE_IMAGE_URL + "hero2.jpg",
+    BASE_IMAGE_URL + "hero3.jpg"
+  ];
+  
+  // Gallery Images - gal1.jpg through gal10.jpg
+  const galleryImages = [
+    BASE_IMAGE_URL + "gal1.jpg",
+    BASE_IMAGE_URL + "gal2.jpg",
+    BASE_IMAGE_URL + "gal3.jpg",
+    BASE_IMAGE_URL + "gal4.jpg",
+    BASE_IMAGE_URL + "gal5.jpg",
+    BASE_IMAGE_URL + "gal6.jpg",
+    BASE_IMAGE_URL + "gal7.jpg",
+    BASE_IMAGE_URL + "gal8.jpg",
+    BASE_IMAGE_URL + "gal9.jpg",
+    BASE_IMAGE_URL + "gal10.jpg"
+  ];
+  
+  // Service Card Background Images (optional - can add service1.jpg, service2.jpg, service3.jpg)
+  const serviceBgImages = [
+    BASE_IMAGE_URL + "service1.jpg",
+    BASE_IMAGE_URL + "service2.jpg",
+    BASE_IMAGE_URL + "service3.jpg"
+  ];
+  
+  let currentPage = 'home';
+  const root = document.getElementById('app-root');
+  let swiperInstance = null;
+  
+  function HomePage() {
+    return `
+      <div class="hero-slider">
+        <div class="swiper heroSwiper">
+          <div class="swiper-wrapper">
+            ${heroImages.map(img => `<div class="swiper-slide" style="background-image: url('${img}'); background-size: cover; background-position: center;"></div>`).join('')}
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+        <div class="hero-content">
+          <h2>Building Dreams, Delivering Excellence</h2>
+          <p>For over 16 years, Christo van Rheede Construction has been the reliable partner for residential, commercial, and industrial projects across Gauteng. NHBRC Registered.</p>
+          <a href="#" class="btn" data-nav-contact>Get a Free Quote</a>
+          <a href="#" class="btn btn-outline" data-nav-gallery>View Our Work</a>
+        </div>
+      </div>
+      
+      <section>
+        <div class="container">
+          <h2 class="section-title">Our Core Services</h2>
+          <div class="grid-3">
+            <div class="service-card" style="background: linear-gradient(135deg, #2d2d2d, #3a3a3a);"><div class="service-card-content"><i class="fas fa-hard-hat"></i><h3>New Builds</h3><p>Custom homes and commercial structures built to last with premium materials.</p></div></div>
+            <div class="service-card" style="background: linear-gradient(135deg, #2d2d2d, #3a3a3a);"><div class="service-card-content"><i class="fas fa-drafting-compass"></i><h3>Renovations</h3><p>Transform existing spaces with modern finishes and structural upgrades.</p></div></div>
+            <div class="service-card" style="background: linear-gradient(135deg, #2d2d2d, #3a3a3a);"><div class="service-card-content"><i class="fas fa-tools"></i><h3>Project Management</h3><p>End-to-end coordination, budgeting, permits and quality control.</p></div></div>
+          </div>
+        </div>
+      </section>
+      
+      <section style="background:#fafcfd;">
+        <div class="container">
+          <h2 class="section-title">What Our Clients Say</h2>
+          <div class="testimonial-grid">
+            <div class="testimonial-card"><p>"Christo van Rheede Construction renovated our office in Brooklyn, Pretoria. They delivered ahead of schedule. Highly recommend!"</p><div class="client-name"><span class="stars">★★★★★</span> – Lindie van der Merwe</div></div>
+            <div class="testimonial-card"><p>"We hired Christo for a new residential project in Centurion. Flawless finishes and excellent communication throughout."</p><div class="client-name"><span class="stars">★★★★★</span> – Thabo Nkosi</div></div>
+            <div class="testimonial-card"><p>"After our previous contractor failed, Christo stepped in and salvaged our development. Honest pricing and high standards."</p><div class="client-name"><span class="stars">★★★★★</span> – Sandra Prinsloo</div></div>
+          </div>
+        </div>
+      </section>
+    `;
+  }
+  
+  function AboutPage() {
+    return `
+      <section>
+        <div class="container">
+          <h2 class="section-title">About Christo van Rheede Construction</h2>
+          <div class="about-grid">
+            <div class="about-text">
+              <p style="font-size:1.1rem; margin-bottom:20px;"><strong>Christo van Rheede Construction (PTY) LTD</strong> is a NHBRC registered construction company founded by Christo van Rheede, with over 16 years of experience in the South African construction industry.</p>
+              <p style="margin-bottom:15px;">Based in Centurion, Gauteng, we specialize in residential, commercial, and industrial projects. Our reputation is built on quality craftsmanship, transparent pricing, and completing projects on time and within budget.</p>
+              <p>We are fully compliant with South African building regulations. Every project, big or small, receives the same attention to detail and commitment to excellence.</p>
+            </div>
+            <div class="about-stats">
+              <div class="stat-box"><div class="stat-number">16+</div><div>Years Experience</div></div>
+              <div class="stat-box"><div class="stat-number">150+</div><div>Projects Completed</div></div>
+              <div class="stat-box"><div class="stat-number">100%</div><div>Client Satisfaction</div></div>
+              <div class="stat-box"><div class="stat-number">NHBRC</div><div>Registered Member</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section style="background:#fafcfd;">
+        <div class="container">
+          <h2 class="section-title">Meet Christo van Rheede</h2>
+          <div class="team-grid">
+            <div class="team-member"><i class="fas fa-user-tie"></i><h3>Christo van Rheede</h3><p>Founder & Managing Director</p><p style="font-size:0.85rem; color:#666;">16+ years construction expertise</p><p style="font-size:0.85rem; color:#666;">072 118 2778</p></div>
+            <div class="team-member"><i class="fas fa-hard-hat"></i><h3>Professional Team</h3><p>Skilled Artisans</p><p style="font-size:0.85rem; color:#666;">NHBRC certified craftsmen</p></div>
+            <div class="team-member"><i class="fas fa-drafting-compass"></i><h3>Project Managers</h3><p>Experienced Leadership</p><p style="font-size:0.85rem; color:#666;">Quality control experts</p></div>
+          </div>
+        </div>
+      </section>
+    `;
+  }
+  
+  function ServicesPage() {
+    const servicesList = [
+      { icon: "fa-home", title: "New Residential Builds", desc: "Custom-designed homes, townhouses, and housing developments tailored to your needs." },
+      { icon: "fa-building", title: "Commercial Construction", desc: "Office blocks, retail centers, warehouses, and industrial facilities." },
+      { icon: "fa-paint-roller", title: "Renovations & Extensions", desc: "Transform existing spaces, add rooms, or completely remodel your property." },
+      { icon: "fa-draw-polygon", title: "Project Management", desc: "Full-service coordination from permits to final handover." },
+      { icon: "fa-water", title: "Roofing & Waterproofing", desc: "Quality roofing installation, repairs, and waterproofing solutions." },
+      { icon: "fa-palette", title: "Interior Finishing", desc: "Tiling, painting, ceilings, and bespoke joinery." }
+    ];
+    return `
+      <section>
+        <div class="container">
+          <h2 class="section-title">Our Comprehensive Services</h2>
+          <p style="margin-bottom: 20px;">We offer a complete range of construction services for residential, commercial, and industrial clients across Gauteng.</p>
+          <div class="grid-3">
+            ${servicesList.map(s => `<div class="service-card" style="background: linear-gradient(135deg, #2d2d2d, #3a3a3a);"><div class="service-card-content"><i class="fas ${s.icon}"></i><h3>${s.title}</h3><p>${s.desc}</p></div></div>`).join('')}
+          </div>
+        </div>
+      </section>
+    `;
+  }
+  
+  function GalleryPage() {
+    return `
+      <section>
+        <div class="container">
+          <h2 class="section-title">Our Project Gallery</h2>
+          <p>Browse through our recent construction and renovation projects across Pretoria, Centurion, and the greater Gauteng region.</p>
+          <div class="gallery-grid">
+            ${galleryImages.map((url, i) => `<div class="gallery-item" style="background-image: url('${url}'); background-size: cover; background-position: center;" title="Project ${i+1}"></div>`).join('')}
+          </div>
+        </div>
+      </section>
+    `;
+  }
+  
+  function ContactPage() {
+    return `
+      <section>
+        <div class="container">
+          <h2 class="section-title">Get In Touch</h2>
+          <p>Have a project in mind? Request a free, no-obligation quote. We serve Pretoria, Centurion, Midrand, and across Gauteng.</p>
+          <div class="contact-flex">
+            <div class="contact-form">
+              <h3>Send us a message</h3>
+              <form id="contactForm" action="https://formsubmit.co/${COMPANY_EMAIL}" method="POST">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="New enquiry from Christo van Rheede Construction">
+                <div class="form-group"><input type="text" name="name" placeholder="Full Name" required></div>
+                <div class="form-group"><input type="email" name="email" placeholder="Email Address" required></div>
+                <div class="form-group"><input type="tel" name="phone" placeholder="Phone Number"></div>
+                <div class="form-group"><textarea rows="4" name="message" placeholder="Tell us about your construction project..." required></textarea></div>
+                <button type="submit">Send Message →</button>
+                <p style="font-size:0.75rem; margin-top:12px;">Christo van Rheede will respond within 24 hours.</p>
+              </form>
+            </div>
+            <div class="contact-info">
+              <h3>Contact Details</h3>
+              <div class="info-detail"><i class="fas fa-map-marker-alt"></i> Copperleaf Estate, Mnandi, Centurion, 0157</div>
+              <div class="info-detail"><i class="fas fa-phone-alt"></i> 072 118 2778 (WhatsApp)</div>
+              <div class="info-detail"><i class="fas fa-envelope"></i> ${COMPANY_EMAIL}</div>
+              <div class="info-detail"><i class="fas fa-user-tie"></i> Christo van Rheede - Owner</div>
+              <hr>
+              <h4>Business Hours</h4>
+              <p>Mon - Fri: 7:30am – 5:30pm<br>Sat: 8am – 1pm</p>
+              <hr>
+              <h4>NHBRC Registration</h4>
+              <p>Fully registered with the National Home Builders Registration Council</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    `;
+  }
+  
+  function initSwiper() {
+    if (swiperInstance) swiperInstance.destroy(true, true);
+    if (document.querySelector('.heroSwiper')) {
+      swiperInstance = new Swiper('.heroSwiper', {
+        loop: true, 
+        autoplay: { delay: 4000, disableOnInteraction: false },
+        pagination: { el: '.swiper-pagination', clickable: true },
+        navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+        effect: 'fade', 
+        fadeEffect: { crossFade: true }
+      });
+    }
+  }
+  
+  function renderPage() {
+    if (currentPage === 'home') { root.innerHTML = HomePage(); setTimeout(initSwiper, 50); }
+    else if (currentPage === 'about') root.innerHTML = AboutPage();
+    else if (currentPage === 'services') root.innerHTML = ServicesPage();
+    else if (currentPage === 'gallery') root.innerHTML = GalleryPage();
+    else if (currentPage === 'contact') root.innerHTML = ContactPage();
+    attachNavEvents();
+    attachFormHandler();
+    updateActiveClass();
+  }
+  
+  function attachFormHandler() {
+    const form = document.getElementById('contactForm');
+    if (form) form.addEventListener('submit', function() {
+      const btn = form.querySelector('button');
+      if (btn) btn.innerText = 'Sending...';
+    });
+  }
+  
+  function attachNavEvents() {
+    document.querySelectorAll('[data-page]').forEach(link => {
+      link.addEventListener('click', (e) => { e.preventDefault(); currentPage = link.getAttribute('data-page'); renderPage(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    });
+    document.querySelectorAll('[data-footer-page]').forEach(link => {
+      link.addEventListener('click', (e) => { e.preventDefault(); currentPage = link.getAttribute('data-footer-page'); renderPage(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    });
+    document.querySelectorAll('[data-nav-gallery]').forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); currentPage = 'gallery'; renderPage(); }));
+    document.querySelectorAll('[data-nav-contact]').forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); currentPage = 'contact'; renderPage(); }));
+  }
+  
+  function updateActiveClass() {
+    document.querySelectorAll('.nav-links a').forEach(item => {
+      const page = item.getAttribute('data-page');
+      if (page === currentPage) item.classList.add('active');
+      else item.classList.remove('active');
+    });
+  }
+  
+  renderPage();
+</script>
+</body>
+</html>
